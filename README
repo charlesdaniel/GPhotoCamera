@@ -1,0 +1,50 @@
+## GPhotoCamera
+## A Python Wrapper around a very small subset of libgphoto2 via ctypes
+## Copyright (c) 2009 Charles Daniel
+##
+## GPhotoCamera is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; either version 2, or (at your option)
+## any later version.
+##
+## GPhotoCamera is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with Paparazzi; see the file COPYING.  If not, write to
+## the Free Software Foundation, 59 Temple Place - Suite 330,
+## Boston, MA 02111-1307, USA.
+
+
+Introduction
+------------
+
+GPhotoCamera is a simple Python wrapper around a small subset of libgphoto2, in particular it is only useful for capturing live preview frames and actual images from a libgphoto2 compatible camera.
+
+Note: As of the writing of this file gphoto2 was at version 2.4.8 and only really runs on Linux (we tested in Ubuntu 9.10 and 10.04).
+
+More information about gphoto can be found here:
+http://gphoto.sourceforge.net/
+
+More information about ctypes can be found here:
+http://python.net/crew/theller/ctypes/tutorial.html
+
+Please Note: I originally developed this for a school project where we had access to a Canon7D and this code is known to work well with it. Since then I haven't had access to any compatible cameras and haven't had the opportunity to verify this code still works for newer versions of Linux/libgphoto2.
+
+
+Prerequisites
+-------------
+
+A Linux distro (tested on Ubuntu 10.04) with libgphoto2 installed (tested with libgphoto2.so.2).
+Python >= 2.6 (haven't tested on 3.0)
+
+
+Example
+-------
+
+cam = GPhotoCamera();
+cam.capture_preview('preview.jpg');
+cam.capture_image('full_image.jpg');
+
